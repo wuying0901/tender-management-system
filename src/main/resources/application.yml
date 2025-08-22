@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tender-management
+
+  datasource:
+    url: jdbc:sqlserver://DESKTOP-VK37FM7:1433;databaseName=tender_db;encrypt=true;trustServerCertificate=true
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sb
+    password: 1
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    com.zhaobiao: DEBUG
+    org.springframework.web: DEBUG
+
+# 管理员默认账号（可改）
+admin:
+  username: admin
+  password: 1
+  jwtSecret: "ThisIsA-32bytes-Secret-Key-ForJWT-ChangeMe!"
